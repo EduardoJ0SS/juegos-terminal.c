@@ -2,7 +2,7 @@ README –           Cómo abrir y ejecutar el proyecto
 
 1. Descomprimir el archivo flopycompartida.rar
 
-Descargá el .rar y descomprimilo donde quieras. Te va a aparecer un archivo llamado flopy.exe.
+Dentro en flopycompartida  Te va a aparecer un archivo llamado flopy.exe.
 
              2. Ejecutar el juego
 
