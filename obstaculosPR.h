@@ -1,18 +1,18 @@
-// obstaculosPR.c (C89 compatible)
+// obstaculosPR.c
 
 #ifndef OBSTACULOS_H
 #define OBSTACULOS_H
 
 #include "raylib.h"
 #include <stdlib.h>
-#include <stdio.h>      /* por seguridad para TextFormat */
+#include <stdio.h>    
 #include "puntajesPR.h"
 
 #define MAX_TUBES 100
 #define FLOPPY_RADIUS 24
 #define TUBES_WIDTH 80
 
-/* -------- Variables globales -------- */
+/*--Variables globales--*/
 static const int screenWidth = 800;
 static const int screenHeight = 450;
 
@@ -21,7 +21,7 @@ static int pausa = 0;
 static int puntaje = 0;
 static int mejorPuntaje = 0;
 
-/* -------- Estructuras -------- */
+/*--Estructuras--*/
 typedef struct Disco {
     Vector2 posicion;
     float radio;
@@ -41,23 +41,20 @@ static Vector2 posTubos[MAX_TUBES] = {0};
 static float velTubos = 0;
 static int efectoSuper = 0;
 
-/* -------- Enum Pantallas -------- */
+/*--Enum Pantalla--*/
 typedef enum PantallaJuego { MENU_PRINCIPAL, JUGANDO, PANTALLA_PUNTAJES, SALIR }
 PantallaJuego;
 
 static PantallaJuego pantallaActual = MENU_PRINCIPAL;
 
-/* -------- Prototipos -------- */
+/*--Prototipos--*/
 void iniciarJuego(void);
 void actualizarJuego(void);
 void dibujarJuego(void);
 int  juegoDebeCerrar(void);
 void actualizarDibujarFrame(void);
 
-/* ============================================================= */
-/*                       IMPLEMENTACIONES                        */
-/* ============================================================= */
-
+/*--IMPLEMENTACIONES--*/
 void iniciarJuego(void)
 {
     int i;
@@ -115,7 +112,7 @@ void actualizarJuego(void)
                 posTubos[i].x -= velTubos * dt;
             }
 
-            /* actualizar rect·ngulos */
+            /* actualizar rect√°ngulos */
             for (i = 0; i < MAX_TUBES; i++) {
                 tubos[i * 2].rec.x = posTubos[i].x;
                 tubos[i * 2 + 1].rec.x = posTubos[i].x;
@@ -294,3 +291,4 @@ void actualizarDibujarFrame(void)
 }
 
 #endif
+
